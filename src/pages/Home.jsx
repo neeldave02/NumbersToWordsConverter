@@ -16,7 +16,7 @@ function Home() {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`http://localhost:5094/convert/${number}`);
+      const response = await fetch(`http://localhost:5094/api/NumbersToWords/convert?number=${number}`);
       // checks for the bad request first
       if (response.status === 400) {
         const errorMessage = await response.text();
